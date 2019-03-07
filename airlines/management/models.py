@@ -57,7 +57,10 @@ class Flight(models.Model):
 
 class Booking(models.Model):
     passenger = models.ForeignKey(Passenger, related_name='bookings', on_delete=models.CASCADE)
-    date_of_booking = models.DateTimeField()
+    date_of_booking = models.DateTimeField(auto_now_add=True)
     flight = models.ForeignKey(Flight, related_name='flights', on_delete=models.CASCADE)
     price = models.IntegerField(default=0)
     price_paid = models.BooleanField(default=False)
+
+    class Meta:
+        unique_together = ('passenger', 'flight',)

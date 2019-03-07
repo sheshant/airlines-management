@@ -10,8 +10,8 @@ from management.models import Booking, Flight, Passenger, Airplane, Airport
 
 
 class AirplaneAdmin(admin.ModelAdmin):
-    list_display = ('type', 'company', 'aircraft_capacity')
-    search_fields = ('type', 'company', 'aircraft_capacity')
+    list_display = ('id', 'type', 'company', 'aircraft_capacity')
+    search_fields = ('id', 'type', 'company', 'aircraft_capacity')
 
 
 class AirportAdmin(admin.ModelAdmin):
